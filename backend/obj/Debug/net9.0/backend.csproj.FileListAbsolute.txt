@@ -30,3 +30,4 @@
 /Users/jojo/application_projects/maisa/backend/obj/Debug/net9.0/backend.pdb
 /Users/jojo/application_projects/maisa/backend/obj/Debug/net9.0/backend.genruntimeconfig.cache
 /Users/jojo/application_projects/maisa/backend/obj/Debug/net9.0/ref/backend.dll
+/Users/jojo/application_projects/maisa/backend/obj/Debug/net9.0/backend.sourcelink.json

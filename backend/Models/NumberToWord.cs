@@ -90,7 +90,7 @@ namespace Maisa.Models
                 output += _single_digits[number];
             }
 
-            return output;
+            return output.Trim();
         }
     };
 }
