@@ -1,0 +1,6 @@
+@backend_HostAddress = http://localhost:5277
+
+POST {{backend_HostAddress}}/number-to-words/
+Accept: application/json
+
+###
