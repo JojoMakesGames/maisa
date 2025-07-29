@@ -56,12 +56,6 @@ namespace Maisa.Models
                 return "Zero";
             }
 
-            if (Math.Abs(number) > 9000)
-            {
-                string memeDirection = number > 0 ? "Over" : "Under";
-                return $"{memeDirection} 9000";
-            }
-
             if (number < 0)
             {
                 output += "Negative ";
