@@ -83,7 +83,7 @@ namespace Maisa.Models
             }
             else if (number > 10)
             {
-                output += $"{_single_digits[number / 10]}teen";
+                output += $"{_single_digits[number % 10]}teen";
             }
             else
             {

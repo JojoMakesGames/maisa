@@ -1,15 +1,13 @@
-import { useState, useRef } from 'react'
 import axios from 'axios';
+import { useState, useRef } from 'react'
+import type { NumberWord } from './types/NumberWord';
+import NumberWordCard from './components/Card/Card';
 
-type NumberToWords = {
-  numberWord: string;
-  url: string;
-};
 
 function App() {
   const inputRef = useRef<HTMLInputElement>(null);
   const [errorString, setErrorString] = useState("")
-  const [numberWords, setNumberWords] = useState<NumberToWords[]>([]);
+  const [numberWords, setNumberWords] = useState<NumberWord[]>([]);
 
   function convertToWords() {
     if (!inputRef.current?.value) {
@@ -37,17 +35,15 @@ function App() {
       });
 
     setErrorString('');
-
-    console.log(numberInput)
   }
 
   return (
     <>
       <input ref={inputRef} type="text" placeholder="Comma Separated Numbers" />
-      <button type="button" onClick={convertToWords}>Convert to Words</button>
+      <button type="button" onClick={convertToWords}>Sort Text</button>
       {errorString && <p style={{ color: 'red' }}>{errorString}</p>}
       {numberWords.length > 0 && numberWords.map((numberWord, index) => (
-        <div key={index}>{numberWord.numberWord}</div>
+        <NumberWordCard key={index} numberWord={numberWord} />
       ))}
 
     </>
