@@ -39,13 +39,16 @@ function App() {
 
   return (
     <>
-      <input ref={inputRef} type="text" placeholder="Comma Separated Numbers" />
-      <button type="button" onClick={convertToWords}>Sort Text</button>
+      <div className="input-section">
+        <input ref={inputRef} type="text" placeholder="Comma Separated Numbers" />
+        <button type="button" onClick={convertToWords}>Sort Text</button>
+      </div>
       {errorString && <p style={{ color: 'red' }}>{errorString}</p>}
-      {numberWords.length > 0 && numberWords.map((numberWord, index) => (
-        <NumberWordCard key={index} numberWord={numberWord} />
-      ))}
-
+     <div className="cards">
+        {numberWords.length > 0 && numberWords.map((numberWord, index) => (
+          <NumberWordCard key={index} numberWord={numberWord} />
+        ))}
+      </div>
     </>
   )
 }
