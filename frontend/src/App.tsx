@@ -4,6 +4,7 @@ import type { NumberWord } from './types/NumberWord';
 import NumberWordCard from './components/Card/Card';
 
 
+
 function App() {
   const inputRef = useRef<HTMLInputElement>(null);
   const [errorString, setErrorString] = useState("")
@@ -25,7 +26,7 @@ function App() {
 
     const numbers = numberInput.split(',').map(num => num.trim()).filter(num => num !== '');
 
-    axios.post('http://localhost:5277/number-to-words', { numbers })
+    axios.post('http://localhost:8080/number-to-words', { numbers })
       .then(({ data }) => {
         setNumberWords(data);
       })
@@ -44,7 +45,7 @@ function App() {
         <button type="button" onClick={convertToWords}>Sort Text</button>
       </div>
       {errorString && <p style={{ color: 'red' }}>{errorString}</p>}
-     <div className="cards">
+      <div className="cards">
         {numberWords.length > 0 && numberWords.map((numberWord, index) => (
           <NumberWordCard key={index} numberWord={numberWord} />
         ))}
